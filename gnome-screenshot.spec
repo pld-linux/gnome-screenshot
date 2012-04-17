@@ -1,12 +1,12 @@
 Summary:	Screenshot utility
 Summary(pl.UTF-8):	Narzędzie do robienia zrzutów ekranu
 Name:		gnome-screenshot
-Version:	3.4.0
-Release:	2
+Version:	3.4.1
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-screenshot/3.4/%{name}-%{version}.tar.xz
-# Source0-md5:	3b6b25aaa995c75caa6906fd4bc47cc4
+# Source0-md5:	765d74d798f9c23ffd8bae379449d3a9
 URL:		http://live.gnome.org/GnomeUtils
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
