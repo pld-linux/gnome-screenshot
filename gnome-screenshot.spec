@@ -1,12 +1,12 @@
 Summary:	Screenshot utility
 Summary(pl.UTF-8):	Narzędzie do robienia zrzutów ekranu
 Name:		gnome-screenshot
-Version:	3.12.0
+Version:	3.16.2
 Release:	1
-License:	GPL v2
+License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-screenshot/3.12/%{name}-%{version}.tar.xz
-# Source0-md5:	d3467ad5bf6a84715a88f5bbc7ef596a
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-screenshot/3.16/%{name}-%{version}.tar.xz
+# Source0-md5:	8f67ae3b0746dab15e417f64a4d7fd13
 URL:		http://live.gnome.org/GnomeUtils
 BuildRequires:	autoconf >= 2.63
 BuildRequires:	automake >= 1:1.11
@@ -18,10 +18,12 @@ BuildRequires:	libcanberra-gtk3-devel
 BuildRequires:	pkgconfig >= 1:0.22
 BuildRequires:	rpmbuild(macros) >= 1.592
 BuildRequires:	tar >= 1:1.22
+BuildRequires:	xorg-lib-libX11-devel
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xz
-Requires(post,postun):	glib2 >= 1:2.26.0
+Requires(post,postun):	glib2 >= 1:2.36.0
 Requires:	glib2 >= 1:2.36.0
+Requires:	gtk+3 >= 3.0.0
 Provides:	gnome-utils-screenshot = 1:%{version}-%{release}
 Obsoletes:	gnome-utils-screenshot < 1:3.3.91-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -67,6 +69,8 @@ rm -rf $RPM_BUILD_ROOT
 %doc NEWS
 %attr(755,root,root) %{_bindir}/gnome-screenshot
 %{_datadir}/GConf/gsettings/gnome-screenshot.convert
+%{_datadir}/appdata/org.gnome.Screenshot.appdata.xml
+%{_datadir}/dbus-1/services/org.gnome.Screenshot.service
 %{_datadir}/glib-2.0/schemas/org.gnome.gnome-screenshot.gschema.xml
-%{_desktopdir}/gnome-screenshot.desktop
+%{_desktopdir}/org.gnome.Screenshot.desktop
 %{_mandir}/man1/gnome-screenshot.1*
